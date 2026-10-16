@@ -15,7 +15,10 @@
     }, { rootMargin: margin || '0px 0px -10% 0px', threshold: 0.08 });
     els.forEach((el) => io.observe(el));
   };
-  once(revealTargets, (el) => el.classList.add('is-in'));
+  // the hero avatar is clipped shut until revealed, so an observer cannot see it: open it directly
+  const avatarEl = document.getElementById('avatar');
+  if (avatarEl) requestAnimationFrame(() => requestAnimationFrame(() => avatarEl.classList.add('is-in')));
+  once(Array.from(revealTargets).filter((el) => el !== avatarEl), (el) => el.classList.add('is-in'));
   window.addEventListener('load', () => setTimeout(() => {
     revealTargets.forEach((el) => {
       const r = el.getBoundingClientRect();
@@ -111,7 +114,7 @@
         const r = li.getBoundingClientRect();
         const mid = (r.top + r.bottom) / 2 - innerHeight / 2;
         const base = i % 2 ? Math.min(80, Math.max(24, innerWidth * 0.05)) : 0;
-        const drift = Math.max(-40, Math.min(40, mid * (i % 2 ? -0.06 : 0.06)));
+        const drift = Math.max(-45, Math.min(45, mid * (i % 2 ? -0.07 : -0.03)));
         li.style.transform = `translateY(${base + drift}px)`;
       });
     };
