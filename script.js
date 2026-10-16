@@ -1,4 +1,4 @@
-// Sasa portfolio: the avatar, scroll reveals, the lit name, the image viewer and a small parallax.
+// Sasa portfolio: the avatar, scroll reveals, the lit name, gallery filters and the image viewer.
 (() => {
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -28,9 +28,7 @@
 
   // rows, strip frames and the footer wordmark
   document.querySelectorAll('.row').forEach((row, i) => row.style.setProperty('--i', i));
-  document.querySelectorAll('.strip li').forEach((li, i) => li.style.setProperty('--i', Math.min(i, 9)));
   once(document.querySelectorAll('.row'), (el) => el.classList.add('is-in'), '0px 0px -6% 0px');
-  once(document.querySelectorAll('.strip'), (el) => el.classList.add('is-in'), '0px 0px -5% 0px');
   once(document.querySelectorAll('.footer'), (el) => el.classList.add('is-in'), '0px 0px -25% 0px');
 
   // ---- the live thing: the last "a" is Sasa's own avatar ----
@@ -84,42 +82,47 @@
   const walk = document.getElementById('walk');
   if (walk && reduced) { walk.removeAttribute('autoplay'); walk.pause(); }
 
-  // ---- gallery viewer ----
+  // ---- design work: filter chips ----
+  const tiles = Array.from(document.querySelectorAll('#tiles li'));
+  const chips = Array.from(document.querySelectorAll('.chip'));
+  chips.forEach((chip) => {
+    chip.addEventListener('click', () => {
+      const f = chip.dataset.filter;
+      chips.forEach((c) => c.setAttribute('aria-pressed', String(c === chip)));
+      tiles.forEach((li) => { li.hidden = f !== 'all' && li.dataset.cat !== f; });
+    });
+  });
+
+  // ---- gallery viewer with prev / next over the visible pieces ----
   const viewer = document.getElementById('viewer');
   const viewerImg = document.getElementById('viewerImg');
   const viewerCap = document.getElementById('viewerCap');
   if (viewer && typeof viewer.showModal === 'function') {
-    document.querySelectorAll('.strip a').forEach((a) => {
-      a.addEventListener('click', (e) => {
-        e.preventDefault();
-        const img = a.querySelector('img');
-        viewerImg.src = a.getAttribute('href');
-        viewerImg.alt = img ? img.alt : '';
-        viewerCap.textContent = a.dataset.caption || '';
-        viewer.showModal();
-      });
+    let current = null;
+    const visible = () => tiles.filter((li) => !li.hidden).map((li) => li.querySelector('a'));
+    const show = (a) => {
+      const img = a.querySelector('img');
+      current = a;
+      viewerImg.src = a.getAttribute('href');
+      viewerImg.alt = img ? img.alt : '';
+      viewerCap.textContent = a.dataset.caption || '';
+    };
+    const step = (dir) => {
+      const list = visible();
+      if (!list.length || !current) return;
+      const i = list.indexOf(current);
+      show(list[(i + dir + list.length) % list.length]);
+    };
+    tiles.forEach((li) => {
+      const a = li.querySelector('a');
+      a.addEventListener('click', (e) => { e.preventDefault(); show(a); viewer.showModal(); });
+    });
+    document.getElementById('viewerPrev').addEventListener('click', () => step(-1));
+    document.getElementById('viewerNext').addEventListener('click', () => step(1));
+    viewer.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') step(-1);
+      if (e.key === 'ArrowRight') step(1);
     });
     viewer.addEventListener('click', (e) => { if (e.target === viewer) viewer.close(); });
-  }
-
-  // ---- phones drift a little with the scroll ----
-  const phones = Array.from(document.querySelectorAll('.phones li'));
-  if (phones.length && !reduced) {
-    let ticking = false;
-    const update = () => {
-      ticking = false;
-      const wide = window.innerWidth >= 768;
-      phones.forEach((li, i) => {
-        if (!wide) { li.style.transform = ''; return; }
-        const r = li.getBoundingClientRect();
-        const mid = (r.top + r.bottom) / 2 - innerHeight / 2;
-        const base = i % 2 ? Math.min(80, Math.max(24, innerWidth * 0.05)) : 0;
-        const drift = Math.max(-45, Math.min(45, mid * (i % 2 ? -0.07 : -0.03)));
-        li.style.transform = `translateY(${base + drift}px)`;
-      });
-    };
-    window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
-    window.addEventListener('resize', update);
-    update();
   }
 })();

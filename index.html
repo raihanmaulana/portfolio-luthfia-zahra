@@ -3,171 +3,437 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- TODO placeholders: links marked data-placeholder="..." (App Store, two portfolio PDFs) still point to #. Replace with real URLs. -->
+  <!-- TODO placeholders: links marked data-placeholder="..." (App Store, CV, two portfolio PDFs) still point to #. Replace with real URLs. -->
   <title>Sasa, UI/UX designer</title>
-  <meta name="description" content="Portfolio of Sasa (Lutfiah Zahra Larosa), a UI/UX and visual designer and Apple Developer Academy alumna. Apps, illustration, campaigns and 2D animation.">
-  <meta name="theme-color" content="#FFE3E8">
+  <meta name="description" content="Portfolio of Sasa (Lutfiah Zahra Larosa), a UI/UX and visual designer and Apple Developer Academy alumna. Case studies, design work and résumé.">
+  <meta name="theme-color" content="#fbeff1">
   <meta property="og:title" content="Sasa, UI/UX designer">
   <meta property="og:description" content="Apps, illustration, campaigns and 2D animation by Lutfiah Zahra Larosa.">
   <meta property="og:type" content="website">
   <link rel="icon" type="image/png" href="assets/favicon.png">
-  <link rel="preconnect" href="https://api.fontshare.com">
-  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
-  <link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600&display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="tokens.css">
   <link rel="stylesheet" href="styles.css">
   <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 
-<header class="hero" id="top">
-  <nav class="nav" aria-label="Main">
-    <a class="wordmark" href="#top" data-rise style="--i:0">Sasa</a>
-    <ul class="nav-links">
-      <li data-rise style="--i:1"><a class="link" href="#work">Work</a></li>
-      <li data-rise style="--i:2"><a class="link" href="#about">About</a></li>
-      <li data-rise style="--i:3"><a class="link" href="#gallery">Gallery</a></li>
-      <li data-rise style="--i:4"><a class="link" href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <h1 class="monument" aria-label="Sasa">
-    <span class="letters" aria-hidden="true">
-      <span class="ltr" data-rise style="--i:1">S</span><span class="ltr" data-rise style="--i:2">a</span><span class="ltr" data-rise style="--i:3">s</span>
-    </span>
-    <button class="avatar shutter" id="avatar" type="button" data-reveal data-state="neutral"
-            aria-label="The last letter a is Sasa's own avatar. Press it to make her smile.">
-      <img class="av av-neutral" src="assets/img/avatar-neutral.webp" width="480" height="480" alt="">
-      <img class="av av-glance" src="assets/img/avatar-glance.webp" width="480" height="480" alt="">
-      <img class="av av-happy" src="assets/img/avatar-happy.webp" width="480" height="480" alt="">
-    </button>
-  </h1>
-
-  <div class="hero-foot">
-    <p class="hero-note" data-rise style="--i:5">UI/UX and visual designer, Apple Developer Academy alumna. She drew that last a herself, so give it a tap.</p>
-    <a class="button" href="#work" data-rise style="--i:6">See the work</a>
+<header class="bar" id="top">
+  <div class="bar-in">
+    <a class="wordmark" href="#top">Sasa</a>
+    <nav class="nav" aria-label="Main">
+      <ul>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#design">Design</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#resume">Résumé</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="button button-sm" href="mailto:lutfiahzahralarosa@gmail.com?subject=Hi%20Sasa">Say hi</a>
   </div>
 </header>
 
 <main>
 
-  <section class="intro wrap" id="intro">
-    <div class="intro-top">
-      <h2 class="intro-head" data-reveal>From factory floors to Figma</h2>
-      <p class="intro-note" data-reveal style="--i:1">Trained as an industrial engineer, now designing apps, illustrations and campaigns that are clear first and cute second.</p>
+  <section class="hero wrap" aria-label="Introduction">
+    <div class="hero-main">
+      <h1 class="monument" aria-label="Sasa">
+        <span class="letters" aria-hidden="true">
+          <span class="ltr" data-rise style="--i:1">S</span><span class="ltr" data-rise style="--i:2">a</span><span class="ltr" data-rise style="--i:3">s</span>
+        </span>
+        <button class="avatar shutter" id="avatar" type="button" data-reveal data-state="neutral"
+                aria-label="The last letter a is Sasa's own avatar. Press it to make her smile.">
+          <img class="av av-neutral" src="assets/img/avatar-neutral.webp" width="480" height="480" alt="">
+          <img class="av av-glance" src="assets/img/avatar-glance.webp" width="480" height="480" alt="">
+          <img class="av av-happy" src="assets/img/avatar-happy.webp" width="480" height="480" alt="">
+        </button>
+      </h1>
+      <p class="role" data-rise style="--i:4">UI/UX and visual designer</p>
+      <p class="summary" data-rise style="--i:5">Lutfiah Zahra Larosa is a creative, detail-oriented designer with an Industrial Engineering degree, a year at Apple Developer Academy and experience in branding, project coordination and digital design. She drew that last <em>a</em> herself, so give it a tap.</p>
+      <div class="cta" data-rise style="--i:6">
+        <a class="button" href="#work">See the work</a>
+        <a class="button button-ghost" href="#resume">Read the résumé</a>
+      </div>
     </div>
-    <dl class="facts">
-      <div data-reveal style="--i:0"><dt>Feb to Dec 2025</dt><dd class="small">Apple Developer Academy in Batam, focused on UI/UX</dd></div>
-      <div data-reveal style="--i:1"><dt>4 apps, 1 game</dt><dd class="small">Broceries, Pomoboo, Boobo, HueMan and BobaHunt</dd></div>
-      <div data-reveal style="--i:2"><dt>1st place</dt><dd class="small">3D design competition, Universiti Teknologi Malaysia, 2024</dd></div>
-      <div data-reveal style="--i:3"><dt>Rp 4 million</dt><dd class="small">Monthly profit at its best from coffee stickers she drew, printed and sold</dd></div>
-    </dl>
-    <figure class="intro-photo" data-reveal>
-      <img src="assets/img/academy-showcase.webp" width="1024" height="768" loading="lazy" alt="Sasa and her teammates posing with thumbs up in front of an app showcase backdrop at Apple Developer Academy">
-    </figure>
+
+    <aside class="glance" data-rise style="--i:5" aria-label="At a glance">
+      <h2 class="glance-title">At a glance</h2>
+      <dl>
+        <div><dt>Now</dt><dd>Assistant Manager, Marketing at LearnLink China, and English tutor on Preply</dd></div>
+        <div><dt>Trained</dt><dd>Apple Developer Academy, Batam, UI/UX track, Feb to Dec 2025</dd></div>
+        <div><dt>Degree</dt><dd>B.Eng Industrial Engineering, Universitas Syiah Kuala, cum laude</dd></div>
+        <div><dt>Tools</dt><dd>Figma, Illustrator, Animate, Keynote, Canva, CapCut</dd></div>
+        <div><dt>Languages</dt><dd>Indonesian, English (EF SET C2), Korean (beginner)</dd></div>
+        <div><dt>Based in</dt><dd>Tangerang Selatan, Banten</dd></div>
+      </dl>
+    </aside>
   </section>
 
-  <section class="chapter chapter-green" id="work" data-ink="#F0F7F3">
-    <div class="wrap bro-top">
-      <div class="bro-intro">
-        <img class="bro-icon" src="assets/img/bro-icon.webp" width="360" height="360" loading="lazy" alt="Broceries app icon: a grocery list with a checkmark and a broccoli in a paper bag" data-reveal>
-        <h2 class="head" data-reveal style="--i:1">Broceries</h2>
-        <p class="lead" data-reveal style="--i:2">A grocery list for people who still forget the milk. Write it like you would on paper, shop in the order of the aisles and never lose last week's list.</p>
-        <p data-reveal style="--i:3">It started when she watched her mom prepare for every shopping trip and still forget things at home. Sasa observed and interviewed shoppers, then chose a dark green ground with high contrast text so adult and older eyes can read it easily.</p>
+  <section class="stats wrap" aria-label="Highlights">
+    <dl>
+      <div data-reveal><dt>4 apps, 1 game</dt><dd>Broceries, Pomoboo, Boobo, HueMan and BobaHunt</dd></div>
+      <div data-reveal style="--i:1"><dt>1st place</dt><dd>3D design competition, Universiti Teknologi Malaysia, 2024</dd></div>
+      <div data-reveal style="--i:2"><dt>Rp 4 million</dt><dd>Best monthly profit from coffee stickers she drew, printed and sold</dd></div>
+      <div data-reveal style="--i:3"><dt>3.62 / 4.00</dt><dd>GPA in Industrial Engineering, graduated cum laude</dd></div>
+    </dl>
+  </section>
+
+  <section class="section wrap" id="work" aria-labelledby="work-title">
+    <header class="sec-head">
+      <h2 id="work-title" data-reveal>Selected work</h2>
+      <p class="sec-note" data-reveal style="--i:1">One full case study and four more apps and games, all from Apple Developer Academy and beyond.</p>
+    </header>
+
+    <article class="case" aria-labelledby="bro-title">
+      <div class="case-top">
+        <img class="bro-icon" src="assets/img/bro-icon.webp" width="360" height="360" loading="lazy" alt="Broceries app icon: a grocery list with a checkmark and a broccoli in a paper bag">
+        <div class="case-title">
+          <h3 id="bro-title">Broceries</h3>
+          <ul class="tags" aria-label="Project details">
+            <li>iOS app</li>
+            <li>UX research</li>
+            <li>UI/UX design</li>
+            <li>Apple Developer Academy, 2025</li>
+          </ul>
+        </div>
+        <a class="button button-light" href="#" data-placeholder="app-store">View on the App Store</a>
       </div>
-      <dl class="bro-stats">
-        <div data-reveal style="--i:1"><dt>7 in 10</dt><dd>shoppers still forget items, even with a list in hand</dd></div>
-        <div data-reveal style="--i:2"><dt>5 in 10</dt><dd>cannot remember what they missed the last time</dd></div>
-        <div data-reveal style="--i:3"><dt>6 in 10</dt><dd>do not rely on grocery apps and go back to paper or phone notes</dd></div>
+
+      <p class="case-lead">A grocery list for people who still forget the milk. Write it like you would on paper, shop in the order of the aisles and never lose last week's list.</p>
+
+      <div class="case-cols">
+        <div>
+          <h4>Why it exists</h4>
+          <p>It started when Sasa watched her mom prepare for every shopping trip and still forget things at home. She observed and interviewed shoppers before choosing a direction, and kept the app simple enough to use with one hand in an aisle.</p>
+        </div>
+        <div>
+          <h4>What it does</h4>
+          <ul class="ticks">
+            <li>Smart grocery list that groups items by supermarket section</li>
+            <li>Flexible input by typing, voice or scanning a receipt or note</li>
+            <li>Missed items carry over, and every finished list can be reused</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Design choices</h4>
+          <ul class="ticks">
+            <li>Dark green ground and high contrast text so adult and older eyes read it easily</li>
+            <li>Simple, fast interaction with low cognitive load</li>
+            <li>Honest limits: no price awareness yet, not built for complex household planning</li>
+          </ul>
+        </div>
+      </div>
+
+      <dl class="bro-stats" aria-label="Research highlights">
+        <div><dt>7 in 10</dt><dd>shoppers still forget items, even with a list in hand</dd></div>
+        <div><dt>5 in 10</dt><dd>cannot remember what they missed the last time</dd></div>
+        <div><dt>6 in 10</dt><dd>do not rely on grocery apps and go back to paper or phone notes</dd></div>
       </dl>
-      <div class="bro-cta">
-        <a class="button button-light" href="#" data-placeholder="app-store" data-reveal>View on the App Store</a>
-      </div>
+
+      <ul class="phones" id="phones" aria-label="Broceries screens">
+        <li><img src="assets/img/bro-add.webp" width="448" height="904" loading="lazy" alt="Broceries add list screen with free typing and item suggestions"><p>Write freely, get suggestions while you type</p></li>
+        <li><img src="assets/img/bro-list.webp" width="448" height="904" loading="lazy" alt="A saved Broceries list grouped by supermarket section"><p>Saved lists sorted by supermarket section</p></li>
+        <li><img src="assets/img/bro-missed.webp" width="448" height="904" loading="lazy" alt="Broceries missed items screen listing what was not bought"><p>Anything unchecked returns as a missed item</p></li>
+        <li><img src="assets/img/bro-history.webp" width="448" height="904" loading="lazy" alt="Broceries history list with a Re-use List button on each finished list"><p>Every finished list is kept, one tap to reuse</p></li>
+        <li><img src="assets/img/bro-scan.webp" width="448" height="904" loading="lazy" alt="Broceries camera scanning a printed receipt"><p>Scan a receipt or handwritten note into a list</p></li>
+      </ul>
+    </article>
+
+    <ul class="projects">
+      <li class="project" data-reveal>
+        <div class="project-img"><img src="assets/img/work-pomoboo.webp" width="880" height="917" loading="lazy" alt="Pomoboo macOS app screens: a focus timer showing 25:00, settings, study buddies and a break notification"></div>
+        <div class="project-body">
+          <h3>Pomoboo</h3>
+          <ul class="tags tags-sm" aria-label="Project details"><li>macOS + iOS</li><li>UI/UX</li><li>Illustration</li></ul>
+          <p>A Pomodoro timer with tomato study buddies. Sasa drew the characters, built it for iOS first, then adapted it to macOS and redesigned it after usability testing.</p>
+        </div>
+      </li>
+      <li class="project" data-reveal style="--i:1">
+        <div class="project-img"><img src="assets/img/work-boobo.webp" width="987" height="1080" loading="lazy" alt="Tilted Boobo sleep app screens in deep blue with mixable white sound sliders"></div>
+        <div class="project-body">
+          <h3>Boobo</h3>
+          <ul class="tags tags-sm" aria-label="Project details"><li>iOS</li><li>UI/UX</li></ul>
+          <p>A sleep app with white sounds you can mix, bedtime reminders and streaks that reward showing up.</p>
+        </div>
+      </li>
+      <li class="project" data-reveal>
+        <div class="project-img"><img src="assets/img/work-bobahunt.webp" width="1009" height="1080" loading="lazy" alt="Pixel art BobaHunt game screens in pink: a checkered maze, a retry screen and a found-the-boba screen"></div>
+        <div class="project-body">
+          <h3>BobaHunt</h3>
+          <ul class="tags tags-sm" aria-label="Project details"><li>Game</li><li>Pixel art</li><li>UI</li></ul>
+          <p>A memory and focus game: remember where the bobas were, find them before the timer ends and make the perfect drink.</p>
+        </div>
+      </li>
+      <li class="project" data-reveal style="--i:1">
+        <div class="project-img"><img src="assets/img/work-hueman.webp" width="1013" height="1080" loading="lazy" alt="Tilted HueMan app screens: pick a photo, select colors of tops and bottoms, and a matching outfit recommendation"></div>
+        <div class="project-body">
+          <h3>HueMan</h3>
+          <ul class="tags tags-sm" aria-label="Project details"><li>iOS</li><li>UI/UX</li></ul>
+          <p>An outfit helper for men who struggle to match colors. Point the camera at a shirt and get top and bottom pairings based on color theory.</p>
+        </div>
+      </li>
+    </ul>
+    <p class="aside-note" data-reveal>Also at the Academy: UPThenic, an iOS calisthenics posture app. Sasa designed the UI/UX and drew the plank illustrations.</p>
+  </section>
+
+  <section class="section wrap" id="design" aria-labelledby="design-title">
+    <header class="sec-head">
+      <h2 id="design-title" data-reveal>Design work</h2>
+      <p class="sec-note" data-reveal style="--i:1">Stickers, campaigns, industrial design and animation. 20 pieces, tap any to enlarge.</p>
+    </header>
+
+    <div class="filters" role="group" aria-label="Filter design work">
+      <button type="button" class="chip" data-filter="all" aria-pressed="true">All <span>20</span></button>
+      <button type="button" class="chip" data-filter="stickers" aria-pressed="false">Stickers <span>8</span></button>
+      <button type="button" class="chip" data-filter="campaign" aria-pressed="false">Campaigns <span>7</span></button>
+      <button type="button" class="chip" data-filter="industrial" aria-pressed="false">Industrial <span>3</span></button>
+      <button type="button" class="chip" data-filter="animation" aria-pressed="false">Animation <span>2</span></button>
     </div>
 
-    <ul class="phones wrap" id="phones">
-      <li><img src="assets/img/bro-add.webp" width="448" height="904" loading="lazy" alt="Broceries add list screen with free typing and item suggestions" data-reveal><p class="small">Write freely and get suggestions while you type</p></li>
-      <li><img src="assets/img/bro-list.webp" width="448" height="904" loading="lazy" alt="A saved Broceries list grouped by supermarket section" data-reveal style="--i:1"><p class="small">Saved lists come back sorted by supermarket section</p></li>
-      <li><img src="assets/img/bro-missed.webp" width="448" height="904" loading="lazy" alt="Broceries missed items screen listing what was not bought" data-reveal style="--i:2"><p class="small">Anything left unchecked returns as a missed item</p></li>
-      <li><img src="assets/img/bro-history.webp" width="448" height="904" loading="lazy" alt="Broceries history list with a Re-use List button on each finished list" data-reveal style="--i:3"><p class="small">Every finished list is kept, one tap to reuse it</p></li>
-      <li><img src="assets/img/bro-scan.webp" width="448" height="904" loading="lazy" alt="Broceries camera scanning a printed receipt" data-reveal style="--i:4"><p class="small">Scan a receipt or handwritten note into a list</p></li>
+    <ul class="tiles" id="tiles">
+      <li data-cat="stickers"><a href="assets/img/st-coffee-hand.webp" data-caption="Coffee-themed stickers, drawn by Sasa, printed and sold online."><img src="assets/img/st-coffee-hand.webp" width="254" height="313" loading="lazy" alt="Small coffee-themed stickers held in a hand"></a></li>
+      <li data-cat="stickers"><a href="assets/img/st-coffee-sheet.webp" data-caption="Coffee sticker sheet with cups, beans and a French press."><img src="assets/img/st-coffee-sheet.webp" width="241" height="298" loading="lazy" alt="A pink sticker sheet of coffee cups and beans"></a></li>
+      <li data-cat="stickers"><a href="assets/img/st-coffee-keys.webp" data-caption="Another coffee sticker sheet, shot on a keyboard."><img src="assets/img/st-coffee-keys.webp" width="241" height="303" loading="lazy" alt="Pink sticker sheet of iced coffees resting on a keyboard"></a></li>
+      <li data-cat="stickers"><a href="assets/img/st-school.webp" data-caption="School pack stickers: glue, window, scissors, calculator, globe and clock."><img src="assets/img/st-school.webp" width="314" height="294" loading="lazy" alt="School pack stickers of glue, scissors, a calculator and a globe"></a></li>
+      <li data-cat="stickers"><a href="assets/img/st-bunny.webp" data-caption="Bunny sticker sheet."><img src="assets/img/st-bunny.webp" width="180" height="178" loading="lazy" alt="Teal sheet of small bunny stickers"></a></li>
+      <li data-cat="stickers"><a href="assets/img/st-duck.webp" data-caption="Duck sticker pack."><img src="assets/img/st-duck.webp" width="172" height="180" loading="lazy" alt="Blue sheet of round duck stickers"></a></li>
+      <li data-cat="stickers"><a href="assets/img/st-characters.webp" data-caption="Character stickers drawn by hand."><img src="assets/img/st-characters.webp" width="244" height="237" loading="lazy" alt="Hand drawn character stickers on a wooden table"></a></li>
+      <li data-cat="stickers"><a href="assets/img/st-fruit.webp" data-caption="Fruit stickers: watermelon, banana and strawberry."><img src="assets/img/st-fruit.webp" width="226" height="235" loading="lazy" alt="Watermelon, banana and strawberry stickers in a hand"></a></li>
+      <li data-cat="campaign"><a href="assets/img/safety-banner.webp" data-caption="Safety Truck banner for the factory area at PT Pupuk Iskandar Muda, made during her Occupational Health and Safety internship."><img src="assets/img/safety-banner.webp" width="510" height="603" loading="lazy" alt="Sasa in a safety vest next to a yellow Safety Truck banner"></a></li>
+      <li data-cat="campaign"><a href="assets/img/safety-video.webp" data-caption="Safety animation video shown on the screen at the factory entrance."><img src="assets/img/safety-video.webp" width="442" height="601" loading="lazy" alt="Sasa pointing at a large screen that asks what the purpose is"></a></li>
+      <li data-cat="campaign"><a href="assets/img/kkn-template.webp" data-caption="Member template designed for a month of community service program documentation."><img src="assets/img/kkn-template.webp" width="609" height="614" loading="lazy" alt="Tan poster template showing team members with brush lettered names"></a></li>
+      <li data-cat="campaign"><a href="assets/img/brochure-5r.webp" data-caption="Brochure introducing the 5S workplace habits, borrowed from Japanese culture."><img src="assets/img/brochure-5r.webp" width="416" height="614" loading="lazy" alt="Brochure about the five workplace habits with a big 5R"></a></li>
+      <li class="wide" data-cat="campaign"><a href="assets/img/hmti-posts.webp" data-caption="Instagram feed for the Industrial Engineering student association at Universitas Syiah Kuala."><img src="assets/img/hmti-posts.webp" width="644" height="544" loading="lazy" alt="Dark and orange Instagram feed grid of event posts"></a></li>
+      <li class="wide" data-cat="campaign"><a href="assets/img/itc-posts.webp" data-caption="Promotional posts for the ITC 2022 training series."><img src="assets/img/itc-posts.webp" width="660" height="561" loading="lazy" alt="Orange Instagram feed grid of speaker posts for ITC 2022"></a></li>
+      <li class="wide" data-cat="campaign"><a href="assets/img/graphic-grid.webp" data-caption="Certificates, vouchers and organization posts."><img src="assets/img/graphic-grid.webp" width="1600" height="959" loading="lazy" alt="Grid of certificates, a gift voucher and posters in dark and gold"></a></li>
+      <li data-cat="industrial"><a href="assets/img/chair-3d.webp" data-caption="Redesigned wooden chair, sized from anthropometric calculations. 3D render."><img src="assets/img/chair-3d.webp" width="432" height="505" loading="lazy" alt="3D render of a wooden chair with a pink seat"></a></li>
+      <li data-cat="industrial"><a href="assets/img/chair-drawing.webp" data-caption="Technical drawing of the ergonomic chair at 1:10 scale."><img src="assets/img/chair-drawing.webp" width="806" height="1040" loading="lazy" alt="Technical drawing of a wooden chair from four angles"></a></li>
+      <li data-cat="industrial"><a href="assets/img/ohs-layout.webp" data-caption="Redesigned floor plan and evacuation route for the Occupational Health and Safety department."><img src="assets/img/ohs-layout.webp" width="942" height="576" loading="lazy" alt="Floor plan with a green evacuation route"></a></li>
+      <li class="wide" data-cat="animation"><a href="assets/img/anim-walk.webp" data-caption="Walk cycle from the 2D animation scholarship by Hellomotion Academy."><img src="assets/img/anim-walk.webp" width="940" height="441" loading="lazy" alt="Five frames of a walk cycle of a girl in a pink sweater"></a></li>
+      <li class="wide" data-cat="animation"><a href="assets/img/anim-expressions.webp" data-caption="Expression sheet for an animation with voice over."><img src="assets/img/anim-expressions.webp" width="704" height="331" loading="lazy" alt="Ten face expressions of a boy with grey hair"></a></li>
     </ul>
   </section>
 
-  <section class="more wrap" id="more">
-    <h2 class="more-head" data-reveal>More work</h2>
-    <div class="scatter">
-      <figure class="piece p-a" data-reveal>
-        <figcaption class="small muted">Pomoboo, macOS and iOS</figcaption>
-        <img src="assets/img/work-pomoboo.webp" width="880" height="917" loading="lazy" alt="Pomoboo macOS app screens: a focus timer showing 25:00, settings, study buddies and a break notification">
-        <p>A Pomodoro timer with tomato study buddies. Sasa drew the characters, then adapted the app from iOS to macOS and redesigned it after usability testing.</p>
-      </figure>
-      <figure class="piece p-b" data-reveal>
-        <figcaption class="small muted">Boobo, iOS</figcaption>
-        <img src="assets/img/work-boobo.webp" width="987" height="1080" loading="lazy" alt="Tilted Boobo sleep app screens in deep blue with mixable white sound sliders">
-        <p>A sleep app with white sounds you can mix, bedtime reminders and streaks.</p>
-      </figure>
-      <p class="remark" data-reveal>Every project here began with watching someone struggle with something small.</p>
-      <figure class="piece p-c" data-reveal>
-        <figcaption class="small muted">BobaHunt, game</figcaption>
-        <img src="assets/img/work-bobahunt.webp" width="1009" height="1080" loading="lazy" alt="Pixel art BobaHunt game screens in pink: a checkered maze, a retry screen and a found-the-boba screen">
-        <p>A memory and focus game: remember where the bobas were, find them before the timer ends and make the perfect drink.</p>
-      </figure>
-      <figure class="piece p-d" data-reveal>
-        <figcaption class="small muted">HueMan, iOS</figcaption>
-        <img src="assets/img/work-hueman.webp" width="1013" height="1080" loading="lazy" alt="Tilted HueMan app screens: pick a photo, select colors of tops and bottoms, and a matching outfit recommendation">
-        <p>An outfit helper for men who struggle to match colors. Point the camera at a shirt and get top and bottom pairings based on color theory.</p>
-      </figure>
-    </div>
-  </section>
+  <section class="section wrap" id="about" aria-labelledby="about-title">
+    <header class="sec-head">
+      <h2 id="about-title" data-reveal>About</h2>
+      <p class="sec-note" data-reveal style="--i:1">From factory floors to Figma.</p>
+    </header>
 
-  <section class="about wrap" id="about">
-    <div class="about-side">
+    <div class="about">
       <figure class="walk" data-reveal>
         <video id="walk" muted loop autoplay playsinline preload="metadata" width="360" height="548" poster="assets/video/walk-poster.jpg" aria-label="Looping walk cycle of a girl in a pink sweater, drawn by Sasa">
           <source src="assets/video/walk.webm" type="video/webm">
           <source src="assets/video/walk.mp4" type="video/mp4">
         </video>
-        <figcaption class="small muted">Her 2D walk cycle, from the Hellomotion Academy animation scholarship.</figcaption>
+        <figcaption>Her 2D walk cycle, from the Hellomotion Academy animation scholarship.</figcaption>
       </figure>
-      <ul class="about-facts small">
-        <li>Tangerang Selatan, Banten</li>
-        <li>Fluent Indonesian, professional English, beginner Korean</li>
-        <li><a class="link-plain" href="mailto:lutfiahzahralarosa@gmail.com">Say hello by email</a></li>
-      </ul>
-    </div>
-    <div class="about-body">
-      <p class="about-lead" data-reveal><img class="portrait" src="assets/img/sasa-portrait.webp" width="481" height="481" loading="lazy" alt="Portrait of Sasa smiling with her arms crossed, wearing a light hijab"><strong>Sasa</strong> is Lutfiah Zahra Larosa, a UI/UX and visual designer who graduated in Industrial Engineering with honors, then taught herself Figma, Illustrator and Animate.</p>
-      <p class="about-more muted" data-reveal>These days she builds brand systems and websites as Assistant Manager for Marketing at LearnLink China, and coaches English speaking on Preply. She also hosts events as a master of ceremonies.</p>
+
+      <div class="about-body" data-reveal style="--i:1">
+        <p class="about-lead"><img class="portrait" src="assets/img/sasa-portrait.webp" width="481" height="481" loading="lazy" alt="Portrait of Sasa smiling with her arms crossed, wearing a light hijab">Sasa trained as an industrial engineer, with a focus on health and safety systems, then moved into UI/UX at Apple Developer Academy in 2025, designing apps from user research to final screens.</p>
+        <p>Today she builds brand systems and websites as Assistant Manager for Marketing at LearnLink China, coaches English speaking on Preply and hosts events as a master of ceremonies. Her work is clear first and cute second: research, a simple structure, then the illustrations that make it feel like hers.</p>
+        <p>She also designs to sell. Her coffee stickers, designed, printed and sold online, reached Rp 4 million in profit in their best month.</p>
+      </div>
+
+      <div class="about-side" data-reveal style="--i:2">
+        <figure class="showcase">
+          <img src="assets/img/academy-showcase.webp" width="1024" height="768" loading="lazy" alt="Sasa and her teammates posing with thumbs up in front of an app showcase backdrop at Apple Developer Academy">
+          <figcaption>Showcase day at Apple Developer Academy, Batam.</figcaption>
+        </figure>
+        <ul class="about-facts">
+          <li>Tangerang Selatan, Banten</li>
+          <li>Fluent Indonesian, professional English, beginner Korean</li>
+          <li><a href="mailto:lutfiahzahralarosa@gmail.com">lutfiahzahralarosa@gmail.com</a></li>
+        </ul>
+      </div>
     </div>
   </section>
 
-  <section class="gallery" id="gallery" aria-labelledby="gallery-title">
-    <h2 class="gallery-title" id="gallery-title">Drawn, printed, posted <span class="muted">20 pieces</span></h2>
-    <ul class="strip" tabindex="0" aria-label="Creative work, scroll sideways">
-      <li><a href="assets/img/st-coffee-hand.webp" data-caption="Coffee-themed stickers, drawn by Sasa, printed and sold online."><img src="assets/img/st-coffee-hand.webp" width="254" height="313" loading="lazy" alt="Small coffee-themed stickers held in a hand"></a></li>
-      <li><a href="assets/img/st-coffee-sheet.webp" data-caption="Coffee sticker sheet with cups, beans and a French press."><img src="assets/img/st-coffee-sheet.webp" width="241" height="298" loading="lazy" alt="A pink sticker sheet of coffee cups and beans"></a></li>
-      <li><a href="assets/img/st-coffee-keys.webp" data-caption="Another coffee sticker sheet, shot on a keyboard."><img src="assets/img/st-coffee-keys.webp" width="241" height="303" loading="lazy" alt="Pink sticker sheet of iced coffees resting on a keyboard"></a></li>
-      <li><a href="assets/img/st-school.webp" data-caption="School pack stickers: glue, window, scissors, calculator, globe and clock."><img src="assets/img/st-school.webp" width="314" height="294" loading="lazy" alt="School pack stickers of glue, scissors, a calculator and a globe"></a></li>
-      <li><a href="assets/img/st-bunny.webp" data-caption="Bunny sticker sheet."><img src="assets/img/st-bunny.webp" width="180" height="178" loading="lazy" alt="Teal sheet of small bunny stickers"></a></li>
-      <li><a href="assets/img/st-duck.webp" data-caption="Duck sticker pack."><img src="assets/img/st-duck.webp" width="172" height="180" loading="lazy" alt="Blue sheet of round duck stickers"></a></li>
-      <li><a href="assets/img/st-characters.webp" data-caption="Character stickers drawn by hand."><img src="assets/img/st-characters.webp" width="244" height="237" loading="lazy" alt="Hand drawn character stickers on a wooden table"></a></li>
-      <li><a href="assets/img/st-fruit.webp" data-caption="Fruit stickers: watermelon, banana and strawberry."><img src="assets/img/st-fruit.webp" width="226" height="235" loading="lazy" alt="Watermelon, banana and strawberry stickers in a hand"></a></li>
-      <li><a href="assets/img/safety-banner.webp" data-caption="Safety Truck banner for the factory area at PT Pupuk Iskandar Muda, made during her Occupational Health and Safety internship."><img src="assets/img/safety-banner.webp" width="510" height="603" loading="lazy" alt="Sasa in a safety vest next to a yellow Safety Truck banner"></a></li>
-      <li><a href="assets/img/safety-video.webp" data-caption="Safety animation video shown on the screen at the factory entrance."><img src="assets/img/safety-video.webp" width="442" height="601" loading="lazy" alt="Sasa pointing at a large screen that asks what the purpose is"></a></li>
-      <li><a href="assets/img/kkn-template.webp" data-caption="Member template designed for a month of community service program documentation."><img src="assets/img/kkn-template.webp" width="609" height="614" loading="lazy" alt="Tan poster template showing team members with brush lettered names"></a></li>
-      <li><a href="assets/img/brochure-5r.webp" data-caption="Brochure introducing the 5S workplace habits, borrowed from Japanese culture."><img src="assets/img/brochure-5r.webp" width="416" height="614" loading="lazy" alt="Brochure about the five workplace habits with a big 5R"></a></li>
-      <li><a href="assets/img/hmti-posts.webp" data-caption="Instagram feed for the Industrial Engineering student association at Universitas Syiah Kuala."><img src="assets/img/hmti-posts.webp" width="644" height="544" loading="lazy" alt="Dark and orange Instagram feed grid of event posts"></a></li>
-      <li><a href="assets/img/itc-posts.webp" data-caption="Promotional posts for the ITC 2022 training series."><img src="assets/img/itc-posts.webp" width="660" height="561" loading="lazy" alt="Orange Instagram feed grid of speaker posts for ITC 2022"></a></li>
-      <li><a href="assets/img/graphic-grid.webp" data-caption="Certificates, vouchers and organization posts."><img src="assets/img/graphic-grid.webp" width="1600" height="959" loading="lazy" alt="Grid of certificates, a gift voucher and posters in dark and gold"></a></li>
-      <li><a href="assets/img/chair-3d.webp" data-caption="Redesigned wooden chair, sized from anthropometric calculations. 3D render."><img src="assets/img/chair-3d.webp" width="432" height="505" loading="lazy" alt="3D render of a wooden chair with a pink seat"></a></li>
-      <li><a href="assets/img/chair-drawing.webp" data-caption="Technical drawing of the ergonomic chair at 1:10 scale."><img src="assets/img/chair-drawing.webp" width="806" height="1040" loading="lazy" alt="Technical drawing of a wooden chair from four angles"></a></li>
-      <li><a href="assets/img/ohs-layout.webp" data-caption="Redesigned floor plan and evacuation route for the Occupational Health and Safety department."><img src="assets/img/ohs-layout.webp" width="942" height="576" loading="lazy" alt="Floor plan with a green evacuation route"></a></li>
-      <li><a href="assets/img/anim-walk.webp" data-caption="Walk cycle from the 2D animation scholarship by Hellomotion Academy."><img src="assets/img/anim-walk.webp" width="940" height="441" loading="lazy" alt="Five frames of a walk cycle of a girl in a pink sweater"></a></li>
-      <li><a href="assets/img/anim-expressions.webp" data-caption="Expression sheet for an animation with voice over."><img src="assets/img/anim-expressions.webp" width="704" height="331" loading="lazy" alt="Ten face expressions of a boy with grey hair"></a></li>
-    </ul>
+  <section class="section wrap" id="resume" aria-labelledby="resume-title">
+    <header class="sec-head">
+      <h2 id="resume-title" data-reveal>Résumé</h2>
+      <p class="sec-note" data-reveal style="--i:1">Everything on the CV, in one place.</p>
+      <a class="button button-sm button-ghost" href="#" data-placeholder="cv-pdf" data-reveal style="--i:2">Download CV, PDF</a>
+    </header>
+
+    <div class="resume">
+      <div class="resume-main">
+        <h3 class="block-title">Experience</h3>
+        <ol class="jobs">
+          <li class="job">
+            <p class="when">Jun 2026 to Present</p>
+            <div>
+              <h4>Assistant Manager, Marketing</h4>
+              <p class="org">PT Sino Indo Panda Academy (LearnLink China) · Remote</p>
+              <ul class="pts">
+                <li>Marketing strategy and campaigns for China education pathways, study tours and CSCA preparation</li>
+                <li>Visual identity: logo, brand guidelines, color palettes, typography, templates and a mascot</li>
+                <li>Website information architecture and UX/UI for the Homepage, China High School Pathway and China Study Tour pages</li>
+                <li>Bilingual English and Indonesian content, market research, offline campaigns and vendor and printing coordination</li>
+              </ul>
+            </div>
+          </li>
+          <li class="job">
+            <p class="when">Sep 2025 to Present</p>
+            <div>
+              <h4>English Tutor</h4>
+              <p class="org">Preply · Online</p>
+              <ul class="pts">
+                <li>Speaking-focused lessons with custom materials, lesson plans and written feedback</li>
+              </ul>
+            </div>
+          </li>
+          <li class="job">
+            <p class="when">Feb to Dec 2025</p>
+            <div>
+              <h4>Learner, UI/UX</h4>
+              <p class="org">Apple Developer Academy · Batam</p>
+              <ul class="pts">
+                <li>Designed in Figma and Sketch following the iOS Human Interface Guidelines, through Challenge-Based Learning</li>
+                <li>Pomoboo: iOS app, then macOS, with a usability-test redesign and tomato illustrations</li>
+                <li>HueMan UI/UX. UPThenic: UI/UX and plank illustrations for an iOS calisthenics posture app</li>
+                <li>Broceries: UX research and UI/UX for an App Store app</li>
+              </ul>
+            </div>
+          </li>
+          <li class="job">
+            <p class="when">Jul to Aug 2024</p>
+            <div>
+              <h4>Selected Participant</h4>
+              <p class="org">AI and Johor Culture Fusion Summer School · Universiti Teknologi Malaysia</p>
+              <ul class="pts">
+                <li>1st place, 3D Design Competition: a 3D model of the UTM and USK initials with hibiscus and Aceh's Jeumpa flowers</li>
+                <li>2nd place, Video Editing</li>
+              </ul>
+            </div>
+          </li>
+          <li class="job">
+            <p class="when">Aug 2023 to Jan 2024</p>
+            <div>
+              <h4>Project Planning Department Intern</h4>
+              <p class="org">Office of International Affairs · Universitas Syiah Kuala</p>
+            </div>
+          </li>
+          <li class="job">
+            <p class="when">Oct to Dec 2023</p>
+            <div>
+              <h4>Laboratory Assistant</h4>
+              <p class="org">Business Design Analysis Laboratory, Industrial Engineering · Universitas Syiah Kuala</p>
+            </div>
+          </li>
+          <li class="job">
+            <p class="when">Jul 2023</p>
+            <div>
+              <h4>Master of Ceremony</h4>
+              <p class="org">IMT-GT International Events · Banda Aceh</p>
+            </div>
+          </li>
+          <li class="job">
+            <p class="when">Jun to Jul 2022</p>
+            <div>
+              <h4>Occupational Health and Safety Intern</h4>
+              <p class="org">PT Pupuk Iskandar Muda · Lhokseumawe</p>
+              <ul class="pts">
+                <li>Safety posters and banners in Illustrator for 500 employees</li>
+                <li>Educational animation videos in Powtoon, plus broadcasts</li>
+              </ul>
+            </div>
+          </li>
+          <li class="job">
+            <p class="when">Oct 2021</p>
+            <div>
+              <h4>Presenter</h4>
+              <p class="org">IConPeori</p>
+            </div>
+          </li>
+          <li class="job">
+            <p class="when">Jun to Oct 2021</p>
+            <div>
+              <h4>Researcher and Journal Author</h4>
+              <p class="org">Atsiri Research Center · Universitas Syiah Kuala</p>
+              <ul class="pts">
+                <li>Experimental design of a patchouli-based lip moisturizer</li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <div class="resume-side">
+        <section class="block" aria-labelledby="edu-title">
+          <h3 class="block-title" id="edu-title">Education</h3>
+          <p class="strong">Universitas Syiah Kuala</p>
+          <p>B.Eng Industrial Engineering · Aug 2019 to Jun 2023</p>
+          <p class="muted">GPA 3.62 / 4.00, cum laude. Research area: Health and Safety Management System. Thesis on OHS management system implementation at PT Pupuk Iskandar Muda.</p>
+        </section>
+
+        <section class="block" aria-labelledby="skills-title">
+          <h3 class="block-title" id="skills-title">Skills</h3>
+          <p class="group-label">Design and research</p>
+          <ul class="chips"><li>UI/UX design</li><li>UI design</li><li>UX research</li><li>Usability testing</li><li>Graphic design</li><li>Presentation design</li></ul>
+          <p class="group-label">Tools</p>
+          <ul class="chips"><li>Figma</li><li>Illustrator</li><li>Animate</li><li>Canva</li><li>CapCut</li><li>Keynote</li><li>PowerPoint</li><li>Excel</li><li>Word</li><li>Visio</li><li>Google and iOS environment</li></ul>
+          <p class="group-label">Writing</p>
+          <ul class="chips"><li>UX copywriting</li><li>Scripts in ID, EN and KO</li><li>Proposals</li><li>Technical writing</li><li>Reports</li><li>Content creation</li></ul>
+          <p class="group-label">People</p>
+          <ul class="chips"><li>Public speaking</li><li>MC</li><li>Leadership</li><li>Teamwork</li><li>Creative thinking</li></ul>
+        </section>
+
+        <section class="block" aria-labelledby="lang-title">
+          <h3 class="block-title" id="lang-title">Languages</h3>
+          <ul class="plain">
+            <li><span>Indonesian</span><span>Fluent</span></li>
+            <li><span>English</span><span>Professional, EF SET C2</span></li>
+            <li><span>Korean</span><span>Beginner</span></li>
+          </ul>
+        </section>
+
+        <section class="block" aria-labelledby="award-title">
+          <h3 class="block-title" id="award-title">Accomplishments</h3>
+          <ul class="plain plain-stack">
+            <li><span>1st winner, 3D Design Competition</span><span>UTM, Aug 2024</span></li>
+            <li><span>2nd winner, Video Editing</span><span>UTM, Aug 2024</span></li>
+            <li><span>2nd winner, Korean Language Speech Contest</span><span>King Sejong Institute, May 2024</span></li>
+            <li><span>TOEPS PBT score 547</span><span>Neo Spectra, Oct 2023</span></li>
+            <li><span>Beneficiary, Student Product Innovation Program</span><span>USK, 2021 and 2022</span></li>
+            <li><span>National finalist, 9th Indonesian Student Forum (ISYF)</span><span>Jul 2017</span></li>
+          </ul>
+        </section>
+      </div>
+    </div>
+
+    <div class="resume-more">
+      <section class="block" aria-labelledby="cert-title">
+        <h3 class="block-title" id="cert-title">Certifications and training</h3>
+        <ul class="plain plain-stack">
+          <li><span>EF SET English C2 Proficient, 91 / 100</span><span>Feb 2026</span></li>
+          <li><span>Korean Language Course 2A and 1B, King Sejong Institute</span><span>2024</span></li>
+          <li><span>2D Animation Fresh Graduate Academy, Hellomotion Academy and Kominfo (Digital Talent Scholarship)</span><span>May to Jun 2024</span></li>
+          <li><span>Korean Grammar 1 and 2, TokTok</span><span>Oct to Nov 2023</span></li>
+          <li><span>Illustrator and Photoshop training, master of the committee</span><span>May 2021</span></li>
+          <li><span>Solidworks training, participant and graphic designer</span><span>Oct 2020</span></li>
+          <li><span>Sketching and painting course, Esther's Fine Art</span><span>Jul to Dec 2019</span></li>
+        </ul>
+      </section>
+
+      <section class="block" aria-labelledby="org-title">
+        <h3 class="block-title" id="org-title">Organizations and committees</h3>
+        <ul class="plain plain-stack">
+          <li><span>Documentary video editor, ARC Anniversary and Awards</span><span>Dec 2023</span></li>
+          <li><span>Graphic designer and documentation, I-SAT</span><span>Dec 2019</span></li>
+          <li><span>Staff of multimedia and information, Industrial Engineering Student Association USK</span><span>Nov 2020 to Nov 2022</span></li>
+          <li><span>Staff of communication and multimedia, Industrial Times</span><span>Mar 2021 to May 2022</span></li>
+          <li><span>Member of publication and documentation, Youth Generation of Tobacco Control</span><span>Apr 2017 to Dec 2018</span></li>
+        </ul>
+        <h3 class="block-title block-title-gap">Publication</h3>
+        <p class="muted">Erwan, F., et al., including Larosa, L.Z. (2022). Experimental Design of Lip Moisturizer as a Patchouli-Based Innovation Product. <cite>Journal of Patchouli and Essential Oil Products</cite>, 1(1), 14-17.</p>
+      </section>
+    </div>
   </section>
 
-  <section class="proof wrap" id="proof">
+  <section class="proof wrap" id="proof" aria-label="Where she has worked and studied">
     <p class="proof-line" id="proofLine"><span class="proof-lead">Worked and studied with</span>
       <span class="n">Apple Developer Academy,</span>
       <span class="n">LearnLink China,</span>
@@ -180,14 +446,18 @@
     </p>
   </section>
 
-  <section class="contact" id="contact" aria-label="Contact">
+  <section class="section wrap" id="contact" aria-labelledby="contact-title">
+    <header class="sec-head">
+      <h2 id="contact-title" data-reveal>Contact</h2>
+      <p class="sec-note" data-reveal style="--i:1">Email is fastest. Portfolio PDFs and the CV are one click away.</p>
+    </header>
     <ul class="rows">
-      <li class="row"><span>Tangerang Selatan, Banten</span></li>
-      <li class="row"><a href="mailto:lutfiahzahralarosa@gmail.com">lutfiahzahralarosa@gmail.com</a></li>
-      <li class="row"><a href="tel:+6281327976827">+62 813 2797 6827</a></li>
-      <li class="row"><a href="https://www.linkedin.com/in/sasa-larosa/" target="_blank" rel="noopener">linkedin.com/in/sasa-larosa</a></li>
-      <li class="row"><a href="#" data-placeholder="uiux-portfolio-pdf">UI/UX portfolio, PDF</a></li>
-      <li class="row"><a href="#" data-placeholder="design-portfolio-pdf">Design portfolio, PDF</a></li>
+      <li class="row"><span class="row-label">Location</span><span class="row-value">Serpong Utara, Tangerang Selatan, Banten</span></li>
+      <li class="row"><span class="row-label">Email</span><a class="row-value" href="mailto:lutfiahzahralarosa@gmail.com">lutfiahzahralarosa@gmail.com</a></li>
+      <li class="row"><span class="row-label">Phone</span><a class="row-value" href="tel:+6281327976827">+62 813 2797 6827</a></li>
+      <li class="row"><span class="row-label">LinkedIn</span><a class="row-value" href="https://www.linkedin.com/in/sasa-larosa/" target="_blank" rel="noopener">linkedin.com/in/sasa-larosa</a></li>
+      <li class="row"><span class="row-label">UI/UX portfolio</span><a class="row-value" href="#" data-placeholder="uiux-portfolio-pdf">Download PDF</a></li>
+      <li class="row"><span class="row-label">Design portfolio</span><a class="row-value" href="#" data-placeholder="design-portfolio-pdf">Download PDF</a></li>
       <li class="row row-hi"><a href="mailto:lutfiahzahralarosa@gmail.com?subject=Hi%20Sasa&body=Hi%20Sasa%2C%0A%0AI%20saw%20your%20portfolio%20and%20would%20love%20to%20talk%20about%20" aria-label="Say hi by email"><span>Say hi</span><span class="go" aria-hidden="true">→</span></a></li>
     </ul>
   </section>
@@ -195,23 +465,30 @@
 </main>
 
 <footer class="footer" id="footer">
-  <div class="foot-top">
-    <p class="invite">Let's make something together.</p>
-    <ul class="foot-links">
-      <li><a class="link-plain" href="mailto:lutfiahzahralarosa@gmail.com">Email</a></li>
-      <li><a class="link-plain" href="https://www.linkedin.com/in/sasa-larosa/" target="_blank" rel="noopener">LinkedIn</a></li>
-      <li><a class="link-plain" href="#" data-placeholder="app-store">Broceries app</a></li>
-    </ul>
-    <a class="button button-light" href="mailto:lutfiahzahralarosa@gmail.com?subject=Hi%20Sasa">Say hi</a>
+  <div class="foot-in">
+    <div class="foot-top">
+      <p class="invite">Let's make something together.</p>
+      <ul class="foot-links">
+        <li><a href="mailto:lutfiahzahralarosa@gmail.com">Email</a></li>
+        <li><a href="https://www.linkedin.com/in/sasa-larosa/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="#" data-placeholder="app-store">Broceries app</a></li>
+      </ul>
+    </div>
+    <p class="credits"><span>2026 Lutfiah Zahra Larosa</span><span>Illustrations, photos and designs by Sasa</span></p>
   </div>
-  <p class="credits small"><span>2026 Lutfiah Zahra Larosa</span><span>Illustrations, photos and designs by Sasa</span></p>
   <p class="wordmark-big" aria-hidden="true">Sasa</p>
 </footer>
 
 <dialog class="viewer" id="viewer" aria-label="Enlarged work">
   <form method="dialog"><button class="viewer-close" aria-label="Close">Close</button></form>
   <img id="viewerImg" alt="">
-  <p id="viewerCap"></p>
+  <div class="viewer-foot">
+    <p id="viewerCap"></p>
+    <div class="viewer-nav">
+      <button type="button" id="viewerPrev" aria-label="Previous piece">Prev</button>
+      <button type="button" id="viewerNext" aria-label="Next piece">Next</button>
+    </div>
+  </div>
 </dialog>
 
 <script src="script.js" defer></script>
