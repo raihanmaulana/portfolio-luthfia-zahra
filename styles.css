@@ -263,6 +263,8 @@ a.row-value { text-decoration-line: underline; text-decoration-color: transparen
 
 /* ---------- tablet ---------- */
 @media (max-width: 63.99em) {
+  .hero { grid-template-columns: minmax(0, 1fr); row-gap: var(--space-lg); }
+  .glance { margin-top: 0; }
   .about { grid-template-columns: 13rem minmax(0, 1fr); }
   .about-side { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--space-lg); align-items: start; }
   .about-facts { margin-top: 0; }
@@ -275,7 +277,7 @@ a.row-value { text-decoration-line: underline; text-decoration-color: transparen
 
 /* ---------- phone ---------- */
 @media (max-width: 47.99em) {
-  :root { --text-mon: clamp(6rem, 33vw, 9rem); }
+  :root { --text-mon: clamp(4.5rem, 27vw, 9rem); }
   .nav li:nth-child(2), .nav li:nth-child(3), .bar .button { display: none; }
   .bar-in { gap: var(--space-md); }
   .hero { grid-template-columns: minmax(0, 1fr); row-gap: var(--space-lg); }

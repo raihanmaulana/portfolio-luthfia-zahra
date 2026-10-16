@@ -45,7 +45,7 @@
   --text-md: 1.1875rem;
   --text-lg: clamp(1.375rem, 1.1rem + 0.9vw, 1.75rem);
   --text-xl: clamp(1.875rem, 1.3rem + 2vw, 2.75rem);
-  --text-mon: clamp(6.5rem, 4rem + 13vw, 11.5rem);
+  --text-mon: clamp(4.5rem, 3rem + 10vw, 11rem);
 
   /* space (4pt) */
   --space-2xs: 0.25rem;
