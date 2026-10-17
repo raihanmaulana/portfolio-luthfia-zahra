@@ -82,6 +82,53 @@
   const walk = document.getElementById('walk');
   if (walk && reduced) { walk.removeAttribute('autoplay'); walk.pause(); }
 
+  // ---- scroll progress and active nav link ----
+  const progress = document.querySelector('.progress');
+  if (progress) {
+    let pt = false;
+    const setP = () => {
+      pt = false;
+      const max = document.documentElement.scrollHeight - innerHeight;
+      progress.style.setProperty('--p', max > 0 ? Math.min(1, scrollY / max).toFixed(4) : 0);
+    };
+    addEventListener('scroll', () => { if (!pt) { pt = true; requestAnimationFrame(setP); } }, { passive: true });
+    addEventListener('resize', setP);
+    setP();
+  }
+  const navLinks = Array.from(document.querySelectorAll('.nav a'));
+  if ('IntersectionObserver' in window && navLinks.length) {
+    const byId = new Map(navLinks.map((a) => [a.getAttribute('href').slice(1), a]));
+    const navIO = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (!e.isIntersecting) continue;
+        navLinks.forEach((a) => a.removeAttribute('aria-current'));
+        const a = byId.get(e.target.id);
+        if (a) a.setAttribute('aria-current', 'true');
+      }
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    byId.forEach((_, id) => { const el = document.getElementById(id); if (el) navIO.observe(el); });
+  }
+
+  // ---- count-up numbers ----
+  const counters = document.querySelectorAll('[data-count]');
+  if (counters.length && !reduced) {
+    once(counters, (el) => {
+      const to = Number(el.dataset.count);
+      const t0 = performance.now();
+      const run = (now) => {
+        const k = Math.min(1, (now - t0) / 900);
+        el.textContent = String(Math.round(to * (1 - Math.pow(1 - k, 3))));
+        if (k < 1) requestAnimationFrame(run);
+      };
+      el.textContent = '0';
+      requestAnimationFrame(run);
+    }, '0px 0px -15% 0px');
+  }
+
+  // ---- design work: tiles enter once, pop again on filter ----
+  document.querySelectorAll('#tiles li').forEach((li, i) => li.style.setProperty('--i', Math.min(i, 14)));
+  once(document.querySelectorAll('#tiles'), (el) => el.classList.add('is-in'), '0px 0px -5% 0px');
+
   // ---- design work: filter chips ----
   const tiles = Array.from(document.querySelectorAll('#tiles li'));
   const chips = Array.from(document.querySelectorAll('.chip'));
@@ -89,7 +136,12 @@
     chip.addEventListener('click', () => {
       const f = chip.dataset.filter;
       chips.forEach((c) => c.setAttribute('aria-pressed', String(c === chip)));
-      tiles.forEach((li) => { li.hidden = f !== 'all' && li.dataset.cat !== f; });
+      let n = 0;
+      tiles.forEach((li) => {
+        li.hidden = f !== 'all' && li.dataset.cat !== f;
+        li.classList.remove('pop');
+        if (!li.hidden) { li.style.setProperty('--j', n++); void li.offsetWidth; li.classList.add('pop'); }
+      });
     });
   });
 

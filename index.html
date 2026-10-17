@@ -33,6 +33,7 @@
     </nav>
     <a class="button button-sm" href="mailto:lutfiahzahralarosa@gmail.com?subject=Hi%20Sasa">Say hi</a>
   </div>
+  <div class="progress" aria-hidden="true"></div>
 </header>
 
 <main>
@@ -71,6 +72,13 @@
     </aside>
   </section>
 
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-group"><span>UI/UX design</span><span>UX research</span><span>Usability testing</span><span>Illustration</span><span>Brand identity</span><span>Graphic design</span><span>Presentation design</span><span>2D animation</span></div>
+      <div class="marquee-group"><span>UI/UX design</span><span>UX research</span><span>Usability testing</span><span>Illustration</span><span>Brand identity</span><span>Graphic design</span><span>Presentation design</span><span>2D animation</span></div>
+    </div>
+  </div>
+
   <section class="stats wrap" aria-label="Highlights">
     <dl>
       <div data-reveal><dt>4 apps, 1 game</dt><dd>Broceries, Pomoboo, Boobo, HueMan and BobaHunt</dd></div>
@@ -82,11 +90,11 @@
 
   <section class="section wrap" id="work" aria-labelledby="work-title">
     <header class="sec-head">
-      <h2 id="work-title" data-reveal>Selected work</h2>
+      <h2 id="work-title" data-reveal><span>Selected work</span></h2>
       <p class="sec-note" data-reveal style="--i:1">One full case study and four more apps and games, all from Apple Developer Academy and beyond.</p>
     </header>
 
-    <article class="case" aria-labelledby="bro-title">
+    <article class="case" aria-labelledby="bro-title" data-reveal>
       <div class="case-top">
         <img class="bro-icon" src="assets/img/bro-icon.webp" width="360" height="360" loading="lazy" alt="Broceries app icon: a grocery list with a checkmark and a broccoli in a paper bag">
         <div class="case-title">
@@ -104,11 +112,11 @@
       <p class="case-lead">A grocery list for people who still forget the milk. Write it like you would on paper, shop in the order of the aisles and never lose last week's list.</p>
 
       <div class="case-cols">
-        <div>
+        <div data-reveal style="--i:0">
           <h4>Why it exists</h4>
           <p>It started when Sasa watched her mom prepare for every shopping trip and still forget things at home. She observed and interviewed shoppers before choosing a direction, and kept the app simple enough to use with one hand in an aisle.</p>
         </div>
-        <div>
+        <div data-reveal style="--i:1">
           <h4>What it does</h4>
           <ul class="ticks">
             <li>Smart grocery list that groups items by supermarket section</li>
@@ -116,7 +124,7 @@
             <li>Missed items carry over, and every finished list can be reused</li>
           </ul>
         </div>
-        <div>
+        <div data-reveal style="--i:2">
           <h4>Design choices</h4>
           <ul class="ticks">
             <li>Dark green ground and high contrast text so adult and older eyes read it easily</li>
@@ -126,18 +134,18 @@
         </div>
       </div>
 
-      <dl class="bro-stats" aria-label="Research highlights">
-        <div><dt>7 in 10</dt><dd>shoppers still forget items, even with a list in hand</dd></div>
-        <div><dt>5 in 10</dt><dd>cannot remember what they missed the last time</dd></div>
-        <div><dt>6 in 10</dt><dd>do not rely on grocery apps and go back to paper or phone notes</dd></div>
+      <dl class="bro-stats" aria-label="Research highlights" data-reveal>
+        <div><dt><span data-count="7">7</span> in 10</dt><dd>shoppers still forget items, even with a list in hand</dd></div>
+        <div><dt><span data-count="5">5</span> in 10</dt><dd>cannot remember what they missed the last time</dd></div>
+        <div><dt><span data-count="6">6</span> in 10</dt><dd>do not rely on grocery apps and go back to paper or phone notes</dd></div>
       </dl>
 
       <ul class="phones" id="phones" aria-label="Broceries screens">
-        <li><img src="assets/img/bro-add.webp" width="448" height="904" loading="lazy" alt="Broceries add list screen with free typing and item suggestions"><p>Write freely, get suggestions while you type</p></li>
-        <li><img src="assets/img/bro-list.webp" width="448" height="904" loading="lazy" alt="A saved Broceries list grouped by supermarket section"><p>Saved lists sorted by supermarket section</p></li>
-        <li><img src="assets/img/bro-missed.webp" width="448" height="904" loading="lazy" alt="Broceries missed items screen listing what was not bought"><p>Anything unchecked returns as a missed item</p></li>
-        <li><img src="assets/img/bro-history.webp" width="448" height="904" loading="lazy" alt="Broceries history list with a Re-use List button on each finished list"><p>Every finished list is kept, one tap to reuse</p></li>
-        <li><img src="assets/img/bro-scan.webp" width="448" height="904" loading="lazy" alt="Broceries camera scanning a printed receipt"><p>Scan a receipt or handwritten note into a list</p></li>
+        <li data-reveal style="--i:0"><img src="assets/img/bro-add.webp" width="448" height="904" loading="lazy" alt="Broceries add list screen with free typing and item suggestions"><p>Write freely, get suggestions while you type</p></li>
+        <li data-reveal style="--i:1"><img src="assets/img/bro-list.webp" width="448" height="904" loading="lazy" alt="A saved Broceries list grouped by supermarket section"><p>Saved lists sorted by supermarket section</p></li>
+        <li data-reveal style="--i:2"><img src="assets/img/bro-missed.webp" width="448" height="904" loading="lazy" alt="Broceries missed items screen listing what was not bought"><p>Anything unchecked returns as a missed item</p></li>
+        <li data-reveal style="--i:3"><img src="assets/img/bro-history.webp" width="448" height="904" loading="lazy" alt="Broceries history list with a Re-use List button on each finished list"><p>Every finished list is kept, one tap to reuse</p></li>
+        <li data-reveal style="--i:4"><img src="assets/img/bro-scan.webp" width="448" height="904" loading="lazy" alt="Broceries camera scanning a printed receipt"><p>Scan a receipt or handwritten note into a list</p></li>
       </ul>
     </article>
 
@@ -180,11 +188,11 @@
 
   <section class="section wrap" id="design" aria-labelledby="design-title">
     <header class="sec-head">
-      <h2 id="design-title" data-reveal>Design work</h2>
+      <h2 id="design-title" data-reveal><span>Design work</span></h2>
       <p class="sec-note" data-reveal style="--i:1">Stickers, campaigns, industrial design and animation. 20 pieces, tap any to enlarge.</p>
     </header>
 
-    <div class="filters" role="group" aria-label="Filter design work">
+    <div class="filters" data-reveal role="group" aria-label="Filter design work">
       <button type="button" class="chip" data-filter="all" aria-pressed="true">All <span>20</span></button>
       <button type="button" class="chip" data-filter="stickers" aria-pressed="false">Stickers <span>8</span></button>
       <button type="button" class="chip" data-filter="campaign" aria-pressed="false">Campaigns <span>7</span></button>
@@ -218,7 +226,7 @@
 
   <section class="section wrap" id="about" aria-labelledby="about-title">
     <header class="sec-head">
-      <h2 id="about-title" data-reveal>About</h2>
+      <h2 id="about-title" data-reveal><span>About</span></h2>
       <p class="sec-note" data-reveal style="--i:1">From factory floors to Figma.</p>
     </header>
 
@@ -250,7 +258,7 @@
 
   <section class="section wrap" id="resume" aria-labelledby="resume-title">
     <header class="sec-head">
-      <h2 id="resume-title" data-reveal>Résumé</h2>
+      <h2 id="resume-title" data-reveal><span>Résumé</span></h2>
       <p class="sec-note" data-reveal style="--i:1">Everything on the CV, in one place.</p>
       <a class="button button-sm button-ghost" href="#" data-placeholder="cv-pdf" data-reveal style="--i:2">Download CV, PDF</a>
     </header>
@@ -259,7 +267,7 @@
       <div class="resume-main">
         <h3 class="block-title">Experience</h3>
         <ol class="jobs">
-          <li class="job">
+          <li class="job" data-reveal style="--i:0">
             <p class="when">Jun 2026 to Present</p>
             <div>
               <h4>Assistant Manager, Marketing</h4>
@@ -272,7 +280,7 @@
               </ul>
             </div>
           </li>
-          <li class="job">
+          <li class="job" data-reveal style="--i:1">
             <p class="when">Sep 2025 to Present</p>
             <div>
               <h4>English Tutor</h4>
@@ -282,7 +290,7 @@
               </ul>
             </div>
           </li>
-          <li class="job">
+          <li class="job" data-reveal style="--i:2">
             <p class="when">Feb to Dec 2025</p>
             <div>
               <h4>Learner, UI/UX</h4>
@@ -295,7 +303,7 @@
               </ul>
             </div>
           </li>
-          <li class="job">
+          <li class="job" data-reveal style="--i:0">
             <p class="when">Jul to Aug 2024</p>
             <div>
               <h4>Selected Participant</h4>
@@ -306,28 +314,28 @@
               </ul>
             </div>
           </li>
-          <li class="job">
+          <li class="job" data-reveal style="--i:1">
             <p class="when">Aug 2023 to Jan 2024</p>
             <div>
               <h4>Project Planning Department Intern</h4>
               <p class="org">Office of International Affairs · Universitas Syiah Kuala</p>
             </div>
           </li>
-          <li class="job">
+          <li class="job" data-reveal style="--i:2">
             <p class="when">Oct to Dec 2023</p>
             <div>
               <h4>Laboratory Assistant</h4>
               <p class="org">Business Design Analysis Laboratory, Industrial Engineering · Universitas Syiah Kuala</p>
             </div>
           </li>
-          <li class="job">
+          <li class="job" data-reveal style="--i:0">
             <p class="when">Jul 2023</p>
             <div>
               <h4>Master of Ceremony</h4>
               <p class="org">IMT-GT International Events · Banda Aceh</p>
             </div>
           </li>
-          <li class="job">
+          <li class="job" data-reveal style="--i:1">
             <p class="when">Jun to Jul 2022</p>
             <div>
               <h4>Occupational Health and Safety Intern</h4>
@@ -338,14 +346,14 @@
               </ul>
             </div>
           </li>
-          <li class="job">
+          <li class="job" data-reveal style="--i:2">
             <p class="when">Oct 2021</p>
             <div>
               <h4>Presenter</h4>
               <p class="org">IConPeori</p>
             </div>
           </li>
-          <li class="job">
+          <li class="job" data-reveal style="--i:0">
             <p class="when">Jun to Oct 2021</p>
             <div>
               <h4>Researcher and Journal Author</h4>
@@ -359,14 +367,14 @@
       </div>
 
       <div class="resume-side">
-        <section class="block" aria-labelledby="edu-title">
+        <section class="block" aria-labelledby="edu-title" data-reveal style="--i:0">
           <h3 class="block-title" id="edu-title">Education</h3>
           <p class="strong">Universitas Syiah Kuala</p>
           <p>B.Eng Industrial Engineering · Aug 2019 to Jun 2023</p>
           <p class="muted">GPA 3.62 / 4.00, cum laude. Research area: Health and Safety Management System. Thesis on OHS management system implementation at PT Pupuk Iskandar Muda.</p>
         </section>
 
-        <section class="block" aria-labelledby="skills-title">
+        <section class="block" aria-labelledby="skills-title" data-reveal style="--i:1">
           <h3 class="block-title" id="skills-title">Skills</h3>
           <p class="group-label">Design and research</p>
           <ul class="chips"><li>UI/UX design</li><li>UI design</li><li>UX research</li><li>Usability testing</li><li>Graphic design</li><li>Presentation design</li></ul>
@@ -378,7 +386,7 @@
           <ul class="chips"><li>Public speaking</li><li>MC</li><li>Leadership</li><li>Teamwork</li><li>Creative thinking</li></ul>
         </section>
 
-        <section class="block" aria-labelledby="lang-title">
+        <section class="block" aria-labelledby="lang-title" data-reveal style="--i:0">
           <h3 class="block-title" id="lang-title">Languages</h3>
           <ul class="plain">
             <li><span>Indonesian</span><span>Fluent</span></li>
@@ -387,7 +395,7 @@
           </ul>
         </section>
 
-        <section class="block" aria-labelledby="award-title">
+        <section class="block" aria-labelledby="award-title" data-reveal style="--i:1">
           <h3 class="block-title" id="award-title">Accomplishments</h3>
           <ul class="plain plain-stack">
             <li><span>1st winner, 3D Design Competition</span><span>UTM, Aug 2024</span></li>
@@ -402,7 +410,7 @@
     </div>
 
     <div class="resume-more">
-      <section class="block" aria-labelledby="cert-title">
+      <section class="block" aria-labelledby="cert-title" data-reveal style="--i:0">
         <h3 class="block-title" id="cert-title">Certifications and training</h3>
         <ul class="plain plain-stack">
           <li><span>EF SET English C2 Proficient, 91 / 100</span><span>Feb 2026</span></li>
@@ -415,7 +423,7 @@
         </ul>
       </section>
 
-      <section class="block" aria-labelledby="org-title">
+      <section class="block" aria-labelledby="org-title" data-reveal style="--i:1">
         <h3 class="block-title" id="org-title">Organizations and committees</h3>
         <ul class="plain plain-stack">
           <li><span>Documentary video editor, ARC Anniversary and Awards</span><span>Dec 2023</span></li>
@@ -445,7 +453,7 @@
 
   <section class="section wrap" id="contact" aria-labelledby="contact-title">
     <header class="sec-head">
-      <h2 id="contact-title" data-reveal>Contact</h2>
+      <h2 id="contact-title" data-reveal><span>Contact</span></h2>
       <p class="sec-note" data-reveal style="--i:1">Email is fastest. Portfolio PDFs and the CV are one click away.</p>
     </header>
     <ul class="rows">
