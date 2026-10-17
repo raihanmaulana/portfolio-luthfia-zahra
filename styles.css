@@ -159,7 +159,9 @@ em { font-style: normal; font-weight: 600; color: var(--color-accent); }
 
 /* ---------- about ---------- */
 .about { display: grid; grid-template-columns: 15rem minmax(0, 1fr) 17rem; gap: var(--space-xl); align-items: start; }
-.walk video { width: 100%; height: auto; aspect-ratio: 360 / 548; object-fit: cover; background: var(--color-paper-2); border-radius: var(--radius); }
+.walk a { display: block; border-radius: var(--radius); overflow: hidden; background: var(--color-paper-3); }
+.walk img { width: 100%; height: auto; aspect-ratio: 880 / 917; object-fit: cover; transition: transform 400ms var(--ease-out); }
+@media (hover: hover) and (pointer: fine) { .walk a:hover img { transform: scale(1.04); } }
 .walk figcaption, .showcase figcaption { margin-top: var(--space-xs); font-size: var(--text-xs); line-height: 1.4; color: var(--color-muted); }
 .about-body p { color: var(--color-ink-2); }
 .about-body p + p { margin-top: var(--space-md); }

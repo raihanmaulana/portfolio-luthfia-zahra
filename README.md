@@ -12,7 +12,7 @@ Web portfolio UI/UX dan visual designer. Situs statis (HTML, CSS, JS), tanpa bui
 - `assets/fonts`: Bricolage Grotesque dan Geist (self-host, tanpa request ke CDN)
 - `.hallmark/log.json`: catatan keputusan desain dari skill Hallmark
 - `assets/img`: gambar karya yang diambil dari PDF portofolio (WebP)
-- `assets/video`: loop walk cycle 2D buatan Sasa
+- `assets/video`: loop walk cycle 2D (saat ini tidak dipakai di halaman; bagian About memakai Pomoboo)
 
 ## Yang perlu dicek sebelum rilis
 - Tautan placeholder (`data-placeholder` di `index.html`): App Store Broceries, PDF portofolio UI/UX, PDF portofolio desain, PDF CV (`cv-pdf`). Masih mengarah ke `#`, ganti dengan URL asli.
