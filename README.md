@@ -15,7 +15,7 @@ Web portfolio UI/UX dan visual designer. Situs statis (HTML, CSS, JS), tanpa bui
 - `assets/video`: loop walk cycle 2D (saat ini tidak dipakai di halaman; bagian About memakai Pomoboo)
 
 ## Yang perlu dicek sebelum rilis
-- Tautan placeholder (`data-placeholder` di `index.html`): App Store Broceries, PDF portofolio UI/UX, PDF portofolio desain, PDF CV (`cv-pdf`). Masih mengarah ke `#`, ganti dengan URL asli.
+- Tautan portofolio UI/UX, portofolio desain, dan CV sudah mengarah ke Google Drive. Tombol "App Store" diganti "Read the case study, PDF" karena link App Store belum ada; tambahkan lagi bila sudah rilis.
 - Angka survei Broceries (7, 5, 6 dari 10) adalah data pengisi, ganti dengan data riset asli atau hapus.
 - Seluruh isi CV (pengalaman, pendidikan, skill, sertifikasi, penghargaan, organisasi, publikasi) sudah masuk ke bagian Résumé; mohon dicek kembali oleh Sasa.
 - Teks dan angka pada bagian intro, studi kasus Broceries, dan "Worked and studied with" ditulis dari CV dan portofolio; mohon dikonfirmasi oleh Sasa.
